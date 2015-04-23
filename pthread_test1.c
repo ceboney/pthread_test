@@ -21,7 +21,7 @@ void* Thread( void *arg )
 //-------------------------------------------------------------
 int main( void )
 {
-    int i, clock_get;
+    int i;
     pthread_t threads[4]; /* 쓰레드 아이디를 위한 변수 */
     
     for ( i=0; i<4; i++ )  /* 쓰레드 생성 */
@@ -29,7 +29,8 @@ int main( void )
         pthread_create( &threads[i],                /* 쓰레드ID */
                         NULL,                       /* 쓰레드 속성 */
                         ( void* (*)(void*) )Thread, /* 쓰레드 시작 함수 */
-                        &thread_args[i] );          /* 생성된 쓰레드에 전달 인자 */
+                        &thread_args[i] );          /* 생성된 쓰레드에 전달 인자 */	
+        printf( "hotfix branch" );
     
     pthread_exit(0); /*메인 쓰레드 종료 */
 }
