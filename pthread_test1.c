@@ -3,7 +3,7 @@
  * Title: Creating/terminating threads(1)
  * Desc: 쓰레드 생성 제거 예제
  * Revision History
- * 
+ * iss53 branch
  ***************************************/
 #include <stdio.h>
 #include <pthread.h>
@@ -15,7 +15,7 @@ void* Thread( void *arg )
 {
     int i;
     for ( i=0; i<30; i++ )
-        printf( "thread %d: %dth iteration\n", *(int*)arg, i );
+        printf( "iss53 branch thread %d: %dth iteration\n", *(int*)arg, i );
     pthread_exit(0);  /* 쓰레드 종료 함수 */
 }
 //-------------------------------------------------------------
@@ -23,6 +23,7 @@ int main( void )
 {
     int i;
     pthread_t threads[4]; /* 쓰레드 아이디를 위한 변수 */
+    printf( "iss53 branch!!" );
     
     for ( i=0; i<4; i++ )  /* 쓰레드 생성 */
         // TODO: 스레드 생성하기
